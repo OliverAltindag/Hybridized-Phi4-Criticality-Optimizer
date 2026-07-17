@@ -3,6 +3,9 @@ from Cython.Build import cythonize
 import numpy
 
 setup(
-    ext_modules=cythonize("rng.pyx", compiler_directives={'language_level': "3"}),
+    ext_modules=cythonize(
+        ["rng.pyx", "invaded_phi4_c.pyx"],
+        compiler_directives={'language_level': "3"},
+    ),
     include_dirs=[numpy.get_include()]
 )
